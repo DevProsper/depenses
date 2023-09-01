@@ -35,47 +35,100 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" 
             data-accordion="false">
 
+                @can("recettes")
+                    <li class="nav-item menu-open">
+                        <a href="{{ setMenuClass('recettes.', 'menu-open') }}"
+                        class="nav-link {{ setMenuClass('recettes.', 'active') }}">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Recettes
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('recettes.recettes.index')}}"
+                                class="nav-link {{ setMenuClass('recettes.recettes.index', 'active') }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Liste</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+                @can("depenses")
                 <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="{{ setMenuClass('depenses.', 'menu-open') }}" 
+                    class="nav-link {{ setMenuClass('depenses.', 'active') }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Starter Pages
+                            Dépenses
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="{{route('depenses.depenses.index')}}" 
+                            class="nav-link {{ setMenuClass('depenses.depenses.index', 'active') }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Active Page</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inactive Page</p>
+                                <p>Liste</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Simple Link
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
+                @endcan
+                @can("administration")
+                    <li class="nav-item {{ setMenuClass('administration.', 'menu-open') }}">
+                        <a href="#" class="nav-link {{ setMenuClass('administration.', 'active') }}">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Administration
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('administration.groupedepenses.groupedepenses.index')}}" 
+                                class="nav-link {{ setMenuClass('administration.groupedepenses.groupedepenses.index', 'active') }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Groupe de dépenses</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('administration.grouperecettes.grouperecettes.index')}}" 
+                                class="nav-link {{ setMenuClass('administration.grouperecettes.grouperecettes.index', 'active') }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Groupe de recettes</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('administration.categoriedepenses.categoriedepenses.index')}}" 
+                                class="nav-link {{ setMenuClass('administration.categoriedepenses.categoriedepenses.index', 'active') }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Catégories dépenses</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('administration.categorierecettes.categorierecettes.index')}}" 
+                                class="nav-link {{ setMenuClass('administration.categorierecettes.categorierecettes.index', 'active') }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Catégories recettes</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
 
-                <li class="nav-item">
-                    <a href="{{route('utilisateurs.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            Utilisateurs
-                        </p>
-                    </a>
-                </li>
+                @can("utilisateurs")
+                    <li class="nav-item">
+                        <a href="{{route('users.utilisateurs.index')}}" class="nav-link {{ setMenuClass('users.utilisateurs.index', 'active') }}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Utilisateurs
+                            </p>
+                        </a>
+                    </li>
+                @endcan
             </ul>
         </nav>
 
