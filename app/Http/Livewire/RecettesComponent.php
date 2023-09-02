@@ -29,11 +29,13 @@ class RecettesComponent extends Component
         'newRecette.nom.required' => "Veuillez saisir le libéllé de la recette.",
         'newRecette.montant.required' => "Le montant est obligatoire.",
         'newRecette.categories_recettes_id.required' => "La catégorie est obligatoire.",
+        'newRecette.date_recette.required' => "La date est obligatoire.",
 
         'editRecette.nom.required' => "Veuillez saisir le libéllé de la recette.",
         'editRecette.categories_recettes_id.required' => "La catégorie est obligatoire.",
         'editRecette.statut.required' => "le statut est obligatoire.",
-        'editRecette.montant.required' => "Le montant est obligatoire."
+        'editRecette.montant.required' => "Le montant est obligatoire.",
+        'editRecette.date_recette.required' => "La date est obligatoire."
     ];
 
     public function render()
@@ -88,6 +90,7 @@ class RecettesComponent extends Component
             return [
                 'editRecette.nom' => 'required',
                 'editRecette.montant' => 'required',
+                'editRecette.date_recette' => 'required',
                 'editRecette.categories_recettes_id' => 'required',
             ];
         }
@@ -95,6 +98,7 @@ class RecettesComponent extends Component
         return [
             'newRecette.nom' => 'required',
             'newRecette.montant' => 'required',
+            'newRecette.date_recette' => 'required',
             'newRecette.categories_recettes_id' => 'required',
             'newRecette.statut' => 'nullable',
         ];

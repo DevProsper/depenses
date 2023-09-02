@@ -29,11 +29,13 @@ class DepensesComponent extends Component
         'newDepense.nom.required' => "Veuillez saisir le libéllé de la recette.",
         'newDepense.montant.required' => "Le montant est obligatoire.",
         'newDepense.categories_depenses_id.required' => "La catégorie est obligatoire.",
+        'newDepense.date_depense.required' => "La date est obligatoire.",
 
-        'editRecette.nom.required' => "Veuillez saisir le libéllé de la recette.",
-        'editRecette.categories_depenses_id.required' => "La catégorie est obligatoire.",
-        'editRecette.statut.required' => "le statut est obligatoire.",
-        'editRecette.montant.required' => "Le montant est obligatoire."
+        'editDepense.nom.required' => "Veuillez saisir le libéllé de la recette.",
+        'editDepense.categories_depenses_id.required' => "La catégorie est obligatoire.",
+        'editDepense.statut.required' => "le statut est obligatoire.",
+        'editDepense.montant.required' => "Le montant est obligatoire.",
+        'editDepense.date_depense.required' => "La date est obligatoire."
     ];
 
     public function render()
@@ -87,6 +89,7 @@ class DepensesComponent extends Component
 
             return [
                 'editDepense.nom' => 'required',
+                'editDepense.date_depense' => 'required',
                 'editDepense.montant' => 'required',
                 'editDepense.categories_depenses_id' => 'required',
             ];
@@ -95,6 +98,7 @@ class DepensesComponent extends Component
         return [
             'newDepense.nom' => 'required',
             'newDepense.montant' => 'required',
+            'newDepense.date_depense' => 'required',
             'newDepense.categories_depenses_id' => 'required',
             'newDepense.statut' => 'nullable',
         ];

@@ -60,6 +60,18 @@
                         @enderror
                     </div>
                     @endif
+
+                    <div class="d-flex">
+                        <div class="form-group flex-grow-1 mr-2">
+                            <label>Date *</label>
+                            <input autocomplete="off" type="date" wire:model="editRecette.date_recette"
+                                class="form-control @error('editRecette.date_recette') is-invalid @enderror">
+                    
+                            @error("editRecette.date_recette")
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
             
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                     <button type="button" wire:click.prevent="goToListRecette()" class="btn btn-danger">Retouner à la liste des

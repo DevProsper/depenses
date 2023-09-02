@@ -14,6 +14,7 @@ class Depense extends Model
         'nom',
         'statut',
         'montant',
+        'date_depense',
         'categories_depenses_id'
     ];
 

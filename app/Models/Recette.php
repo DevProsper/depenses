@@ -14,6 +14,7 @@ class Recette extends Model
         'nom',
         'statut',
         'montant',
+        'date_recette',
         'categories_recettes_id'
     ];
 
